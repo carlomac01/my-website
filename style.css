@@ -165,6 +165,15 @@ h2{margin:0;font:600 clamp(32px,4vw,48px)/1.05 var(--display);letter-spacing:-.0
 .apps div{flex:1;text-align:center;font-size:12px;opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
 .on .apps div{opacity:1;transform:none;transition-delay:calc(var(--i) * .12s + .9s)}
 .apps b{display:grid;place-items:center;height:42px;margin-bottom:4px;border-radius:12px;font:600 17px var(--display);color:var(--sand);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+/* DaVinci Resolve: charcoal tile with a colour-wheel ring */
+.apps b.dr{position:relative;background:#17181B;color:#F1EEE6}
+.apps b.dr::before{content:"";position:absolute;width:32px;height:32px;border-radius:50%;background:conic-gradient(#E5484D,#F5A524,#F2D14B,#46C37B,#3EA5E0,#5B6CF0,#B35BE8,#E5484D)}
+.apps b.dr::after{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:#17181B}
+.apps b.dr span{position:relative;z-index:1;font-size:12px;letter-spacing:-.02em}
+.on .apps b.dr::before{animation:drspin 9s linear infinite}
+@keyframes drspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.on .apps b.dr::before{animation:none}}
+
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chips a,.chips span{padding:6px 12px;border-radius:99px;border:1px solid rgba(233,225,209,.3);text-decoration:none}
 .chips a{background:var(--sand);color:var(--navy);border-color:var(--sand)}
