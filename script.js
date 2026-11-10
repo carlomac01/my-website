@@ -79,7 +79,7 @@ function focusSkill(c, i, manual) {
   });
   d.querySelector('.dh').textContent = '> ' + it[0];
   typeInto(d.querySelector('.dtx'), it[2]);
-  if (manual) svHold = performance.now() + 12000;
+  if (manual) svHold = performance.now() + 20000;
 }
 dscs.forEach((d, c) => {
   const list = d.querySelector('.dlist');

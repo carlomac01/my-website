@@ -328,7 +328,7 @@ body.flipped:not(.thawed)::after{filter:invert(1);mix-blend-mode:screen;opacity:
 @keyframes fl{0%{opacity:1}22%{opacity:0}40%{opacity:1}56%,100%{opacity:0}}
 
 /* Opening lines: dim, lit only where the cursor is */
-.beats{position:absolute;inset:0;z-index:2}
+.beats{position:absolute;inset:0;z-index:2;pointer-events:none}
 .beat{position:absolute;inset:0;margin:0;display:grid;place-content:center;padding:0 clamp(20px,6vw,90px);text-align:center;opacity:0;visibility:hidden;
   font:700 clamp(36px,6.6vw,96px)/1.02 var(--display);letter-spacing:-.04em;color:transparent;-webkit-text-fill-color:transparent;
   background:radial-gradient(circle 300px at var(--mx,50%) var(--my,50%),#F3EEE2 0,color-mix(in srgb,var(--sv-fg) 50%,transparent) 55%,color-mix(in srgb,var(--sv-fg) 14%,transparent) 100%);-webkit-background-clip:text;background-clip:text;
