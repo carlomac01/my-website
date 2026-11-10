@@ -57,13 +57,23 @@ const SV_DATA = [
    ["Ticketing and Service Management","M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4zM14 7v10","I'm able to establish and maintain ticketing systems, shared inbox workflows, service request processes, and support procedures to improve operational efficiency."],
    ["Document Formatting and Branding","M4 4h16v4H4zM12 8v13M8 21h8","I'm able to produce professional business documents that align with organisational branding standards, including templates, styling, formatting, and publication-ready materials."],
    ["File Conversion and Content Management","M4 8h14l-3-3M20 16H6l3 3","I'm able to convert, organise, and manage documents across different formats and platforms while preserving accuracy, accessibility, and usability."],
-   ["Business Process Improvement","M3 17l6-6 4 4 8-8M15 7h6v6","I'm able to identify inefficiencies, recommend improvements, and implement practical solutions that enhance productivity, organisation, and workflow effectiveness."]]
+   ["Business Process Improvement","M3 17l6-6 4 4 8-8M15 7h6v6","I'm able to identify inefficiencies, recommend improvements, and implement practical solutions that enhance productivity, organisation, and workflow effectiveness."]],
+  [["IT Support Officer, 2024 to now","M3 7h18v13H3zM9 7V4h6v3M3 13h18","Since 2024 I’ve been the IT Support Officer at St Augustine’s College, keeping 1,500+ endpoints and the systems around them running: identity, email, networking, backups, printing, CCTV and access control, working with external vendors and cross-diocese IT teams."],
+   ["Google to Microsoft 365 Move","M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5 4 4 0 0 1 17.5 18zM12 15v-5M9.5 12.5 12 10l2.5 2.5","I delivered the full-scale migration from Google Workspace to Microsoft 365, moving identity, email and data services with zero critical downtime."],
+   ["Intune and Jamf Fleet","M3 5h13v9H3zM1 18h17M18 8h4v11h-4z","I manage 1,500+ endpoints across Windows, macOS and iOS/iPadOS with Intune and Jamf, led the 1,000+ device Apple fleet move from Jamf to Intune, and built 50+ configuration profiles and 40+ PowerShell and Bash scripts to standardise provisioning."],
+   ["L.A.R.A and Custom Tooling","M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM17 13v7M13.5 16.5h7","I designed and deployed L.A.R.A with Power Apps and Power Automate to track loan devices, 2,000+ assets, repairs and account credentials, and coded a custom C# deployment tool in Visual Studio to simplify application packaging."],
+   ["Security and Compliance","M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM9 12l2 2 4-4","I enforced organisation-wide MFA and password policies aligned to ISO 27001 and the ACSC ISM, and run the Microsoft 365 security and compliance stack: Defender, Exchange, Purview, SharePoint and Teams admin."],
+   ["Kanban Lead, Twelverays","M4 4h4.5v16H4zM9.75 4h4.5v10h-4.5zM15.5 4H20v13h-4.5z","As an intern in 2023 I led a cross-functional Kanban team converting automation workflows from Zapier to Power Automate, and deployed AutoGPT on Azure Kubernetes Service using Docker, Postman and REST APIs."],
+   ["Developer Placement","M8 6l-6 6 6 6M16 6l6 6-6 6","On a two-week placement at Advance Computing I helped build a Microsoft Teams support-request panel with Power Apps, Power Automate and SQL, helped refactor a C#, JavaScript and jQuery web app, and joined the daily stand-ups."],
+   ["Cloud and Infrastructure Builds","M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01","Hands-on builds: a secure Amazon S3 data management system with KMS encryption and access control, an AWS Client VPN with OpenVPN on EC2 instances with staff authentication, and a concept virtualised college IT environment on VMware vSphere ESXi, Windows Server and TrueNAS."],
+   ["Electoral Voting System","M4 4h16v16H4zM8 12l3 3 5-6","A concept electoral voting web app with voter verification and a ballot process, built with JavaScript, jQuery, PHP, HTML, CSS and Oracle SQL."],
+   ["Certifications","M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z","Microsoft Intune Fundamentals, Scrum Foundation Professional (SFPC) and Intel Cloud DevOps, plus Cisco networking and cybersecurity, IBM cloud and Docker, and VMware virtualisation and storage courses, on top of my Bachelor of Information Technology from RMIT."]]
 ];
 const sv = document.querySelector('.services'), svDark = document.querySelector('.sv-dark'), svStage = document.querySelector('.sv-stage');
 const beats = $$('.beat'), dscs = $$('.dsc'), dtabs = $$('.dtabs button'), dossier = document.querySelector('.dossier');
 const shutter = document.querySelector('.shutter'), flash = document.querySelector('.flash');
 let flipped = false, flipBusy = false, svCat = -1, svHold = 0;
-const svFocus = [0, 0, 0, 0];
+const svFocus = [0, 0, 0, 0, 0];
 
 function typeInto(el, text) {
   clearInterval(el._t);
@@ -128,12 +138,12 @@ function setCat(ci) {
 function servicesUpdate(pinned, vh) {
   sv.classList.toggle('flat', !pinned);
   if (!pinned) return;
-  const r = sv.getBoundingClientRect(), u = clamp(-r.top / vh, 0, 10.1);
+  const r = sv.getBoundingClientRect(), u = clamp(-r.top / vh, 0, 11.4);
   const ct = contact ? contact.getBoundingClientRect().top : 1e9;
   const want = u >= .7 && ct > 60;
-  setFlip(want, u > 8);
+  setFlip(want, u > 9.3);
   beats.forEach((b, k) => b.classList.toggle('on', want && u >= .7 + .8 * k && u < .7 + .8 * (k + 1)));
-  setCat(want && u >= 3.9 ? Math.min(Math.floor((u - 3.9) / 1.3), 3) : -1);
+  setCat(want && u >= 3.9 ? Math.min(Math.floor((u - 3.9) / 1.3), 4) : -1);
 }
 dtabs.forEach((b, k) => b.addEventListener('click', () => {
   const r = sv.getBoundingClientRect();

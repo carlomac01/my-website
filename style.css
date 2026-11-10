@@ -291,7 +291,7 @@ footer{padding-top:32px;padding-bottom:48px;font-size:15px;color:var(--muted)}
 .flat .jart.two{grid-template-columns:1fr}
 
 /* Services: calm at first, then the takeover */
-.services{position:relative;height:1110vh;background:var(--paper)}
+.services{position:relative;height:1240vh;background:var(--paper)}
 .sv-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#F6F1E5,#EEE7D6)}
 .flipped .sv-stage{background:linear-gradient(180deg,var(--sv-bg1),var(--sv-bg2))}
 .sv-calm{width:100%}.flipped .sv-calm{display:none}
@@ -342,12 +342,12 @@ body.flipped:not(.thawed)::after{filter:invert(1);mix-blend-mode:screen;opacity:
 /* Capability dossier */
 .dossier{position:absolute;inset:0;padding-top:76px;padding-bottom:20px;display:flex;flex-direction:column;gap:clamp(10px,2vh,22px);opacity:0;visibility:hidden;transition:opacity .8s}
 .dossier.on{opacity:1;visibility:visible}
-.dtabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding-bottom:12px;border-bottom:1px solid color-mix(in srgb,var(--sv-fg) 14%,transparent)}
-.dtabs .kick{margin:0 auto 0 0;color:var(--sv-ac)}
-.dtabs button{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:99px;border:1px solid transparent;background:none;color:inherit;font:500 14px var(--body);opacity:.5;cursor:pointer;transition:.3s}
+.dtabs{display:flex;gap:4px;flex-wrap:wrap;align-items:center;padding-bottom:12px;border-bottom:1px solid color-mix(in srgb,var(--sv-fg) 14%,transparent)}
+.dtabs .kick{margin:0 auto 0 0;white-space:nowrap;color:var(--sv-ac)}
+.dtabs button{display:flex;align-items:center;gap:6px;padding:7px 9px;border-radius:99px;border:1px solid transparent;background:none;color:inherit;font:500 13.5px var(--body);white-space:nowrap;opacity:.5;cursor:pointer;transition:.3s}
 .dtabs button.on{opacity:1;border-color:color-mix(in srgb,var(--sv-ac) 60%,transparent);background:color-mix(in srgb,var(--sv-ac) 10%,transparent)}
 .dtabs .ic{width:18px;height:18px}
-.dtabs em{font-style:normal;font-size:12px;padding:1px 7px;border-radius:99px;background:color-mix(in srgb,var(--sv-fg) 12%,transparent)}
+.dtabs em{font-style:normal;font-size:12px;padding:1px 6px;border-radius:99px;background:color-mix(in srgb,var(--sv-fg) 12%,transparent)}
 .dscenes{position:relative;flex:1;min-height:0}
 .dsc{position:absolute;inset:0;display:grid;grid-template-columns:minmax(240px,.85fr) 1.6fr;gap:clamp(24px,4vw,56px);align-items:center;opacity:0;visibility:hidden;transition:opacity .5s,visibility 0s .5s}
 .dsc.on{opacity:1;visibility:visible;transition-delay:0s}
@@ -403,6 +403,7 @@ body{--t:0;--sv-fg:#E9E1D1;--sv-soft:#A9BCCB;--sv-bg1:#070706;--sv-bg2:#070706;-
 body[data-th="1"]{--sv-ac:#A66BFF}
 body[data-th="2"]{--sv-ac:#4E8DF7}
 body[data-th="3"]{--sv-ac:#3DBE7A}
+body[data-th="4"]{--sv-ac:#F0A93B}
 
 /* Administrative Support: 15 capabilities in three columns */
 .dsc[data-c="3"] .dlist{grid-template-columns:repeat(3,1fr)}
