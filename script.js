@@ -73,17 +73,14 @@ function typeInto(el, text) {
 }
 function focusSkill(c, i, manual) {
   const d = dscs[c], it = SV_DATA[c][i]; svFocus[c] = i;
-  d.querySelectorAll('.chip').forEach((b, k) => {
-    b.classList.toggle('on', k === i);
-    if (k === i) { b.classList.remove('run'); void b.offsetWidth; b.classList.add('run'); } else b.classList.remove('run');
-  });
+  d.querySelectorAll('.chip').forEach((b, k) => b.classList.toggle('on', k === i));
   d.querySelector('.dh').textContent = '> ' + it[0];
   typeInto(d.querySelector('.dtx'), it[2]);
   if (manual) svHold = performance.now() + 20000;
 }
 dscs.forEach((d, c) => {
   const list = d.querySelector('.dlist');
-  list.innerHTML = SV_DATA[c].map(it => `<button class="chip"><svg class="ic"><path d="${it[1]}"/></svg><span>${it[0]}</span><i class="bar"></i></button>`).join('');
+  list.innerHTML = SV_DATA[c].map(it => `<button class="chip"><svg class="ic"><path d="${it[1]}"/></svg><span>${it[0]}</span></button>`).join('');
   list.querySelectorAll('.chip').forEach((b, i) => { b.addEventListener('mouseenter', () => focusSkill(c, i, true)); b.addEventListener('click', () => focusSkill(c, i, true)); });
   focusSkill(c, 0);
 });
