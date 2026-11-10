@@ -225,7 +225,7 @@ if (!reduce) {
   const layers = $$('.layer'), jarts = $$('.jart');
   const track = document.querySelector('.track');
   const band = document.querySelector('.band');
-  const mags = fine ? $$('.nav a, .mail, .links a, .copybtn').map(el => (el.classList.add('mag'), { el, x: 0, y: 0 })) : [];
+  const mags = fine ? $$('.nav a, .mail, .links a, .copybtn, .hero-cta a, .cv-row a').map(el => (el.classList.add('mag'), { el, x: 0, y: 0 })) : [];
   let dot, ring, glow;
 
   if (fine) {
