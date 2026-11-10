@@ -264,7 +264,12 @@ footer{padding-top:32px;padding-bottom:48px;font-size:15px;color:var(--muted)}
 @keyframes blink{50%{opacity:0}}
 .trk{fill:none;stroke:var(--line);stroke-width:10}
 .rg{fill:none;stroke:var(--blue);stroke-width:10;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 2.2s cubic-bezier(.2,.7,.2,1) .5s}
-.on .rg{stroke-dashoffset:8}.on .rg.r2{stroke-dashoffset:48}
+.on .rg{stroke-dashoffset:0}
+.rg2{fill:none;stroke:#BFD3E2;stroke-width:10;stroke-linecap:round;stroke-dasharray:7 93;transform:rotate(-90deg);transform-origin:center;transform-box:fill-box}
+.orbit{opacity:0;transition:opacity .6s 2.8s}
+.on .orbit{opacity:1;animation:orb 7s linear infinite}.on .orbit.o2{animation-duration:5s;animation-direction:reverse}
+@keyframes orb{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.on .orbit{animation:none}}
 .art .num{font:700 40px var(--display)}.art .sm{font-size:11px;fill:var(--muted)}
 .now{position:absolute;top:-12px;right:16px;display:flex;align-items:center;gap:8px;padding:4px 12px;border-radius:99px;background:var(--blue);color:#fff;font-size:13px}
 .now i{width:8px;height:8px;border-radius:50%;background:#fff;animation:ping 2s infinite}
